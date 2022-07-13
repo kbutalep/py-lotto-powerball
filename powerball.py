@@ -1,4 +1,3 @@
-# lotto picker by manny juan  (juanm@wellsfargo.com or manny@bdt.com)
 
 from random import randint
 
@@ -9,7 +8,6 @@ def pick_lotto():
     m = maxm
     r = list(range(m + 1))
     v = []
-    print("maxj", maxj)
     for j in range(maxj):
         i = randint(1, m)
         n = r[i]
@@ -18,15 +16,16 @@ def pick_lotto():
         v.append(n)
     return(v)
 
+
 def run():
-    done = 0
+    done = False
     while not done:
         try:
             x = input('\npress Enter for Lotto picks (Q to quit). ')
         except EOFError:
             x = 'q'
         if x and (x[0] == 'q' or x[0] == 'Q'):
-            done = 1
+            done = True
             print('done')
         else:
             print(pick_lotto())
