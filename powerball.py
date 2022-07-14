@@ -3,8 +3,8 @@ from random import randint
 
 
 def pick_lotto():
-    maxm = 53
-    maxj = 6
+    maxm = 69
+    maxj = 5
     m = maxm
     r = list(range(m + 1))
     v = []
@@ -14,6 +14,8 @@ def pick_lotto():
         r[i:i + 1] = []
         m = m - 1
         v.append(n)
+    power_ball = randint(1, 26)
+    v.append(f'Power Ball: {power_ball}')
     return(v)
 
 
@@ -21,7 +23,7 @@ def run():
     done = False
     while not done:
         try:
-            x = input('\npress Enter for Lotto picks (Q to quit). ')
+            x = input('\npress Enter for Power Ball picks (Q to quit). ')
         except EOFError:
             x = 'q'
         if x and (x[0] == 'q' or x[0] == 'Q'):
